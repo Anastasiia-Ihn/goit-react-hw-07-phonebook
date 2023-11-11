@@ -9,7 +9,7 @@ import {
   StyledForm,
 } from './ContactForm.styled';
 
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 
