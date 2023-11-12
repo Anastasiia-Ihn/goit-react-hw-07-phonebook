@@ -1,6 +1,4 @@
 import { Formik } from 'formik';
-// import { nanoid } from '@reduxjs/toolkit';
-
 import * as Yup from 'yup';
 import {
   BtnAddContact,
@@ -23,7 +21,7 @@ const builderSchema = Yup.object().shape({
 
 const initialValues = {
   name: '',
-  number: '',
+  phone: '',
 };
 
 export const ContactForm = () => {
@@ -42,7 +40,6 @@ export const ContactForm = () => {
 
     dispatch(
       addContact({
-        // id: nanoid(),
         name,
         phone,
       })

@@ -4,16 +4,13 @@ import { deleteContact } from '../../redux/operations';
 import { selectVisibleContacts } from 'redux/selectors';
 
 export const ContactList = () => {
-  const visibleContacts = useSelector(selectVisibleContacts)
- console.log(visibleContacts);
- 
+  const visibleContacts = useSelector(selectVisibleContacts);
+
   const dispatch = useDispatch();
 
   const delContact = idContact => {
-    console.log(idContact);
-    
-    return dispatch(deleteContact(idContact))
-  }
+    return dispatch(deleteContact(idContact));
+  };
 
   return (
     <List>
@@ -21,7 +18,7 @@ export const ContactList = () => {
         <ListItem key={id}>
           <p>{name}</p>
           <p>{phone}</p>
-          <BtnDeleteContact onClick={() =>delContact(id)}>
+          <BtnDeleteContact onClick={() => delContact(id)}>
             Delete
           </BtnDeleteContact>
         </ListItem>

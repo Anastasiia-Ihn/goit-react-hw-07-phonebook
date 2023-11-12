@@ -22,22 +22,14 @@ const handleFulfilled = state => {
 };
 
 const fetchFulfilled = (state, { payload }) => {
-  // console.log(payload);
-  
   state.contacts = payload;
 };
 
 const addFulfilled = (state, { payload }) => {
-  // console.log(payload);
-  // console.log(state.contacts);
-
   state.contacts.push(payload);
 };
 
 const deleteFulfilled = (state, { payload }) => {
-  console.log(state.contacts);
-  console.log(payload);
-
   state.contacts = state.contacts.filter(contact => contact.id !== payload);
 };
 
