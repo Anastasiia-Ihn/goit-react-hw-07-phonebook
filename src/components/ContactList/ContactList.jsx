@@ -5,6 +5,7 @@ import { selectVisibleContacts } from 'redux/selectors';
 
 export const ContactList = () => {
   const visibleContacts = useSelector(selectVisibleContacts)
+ console.log(visibleContacts);
  
   const dispatch = useDispatch();
 
@@ -16,10 +17,10 @@ export const ContactList = () => {
 
   return (
     <List>
-      {visibleContacts?.map(({ id, name, number }) => (
+      {visibleContacts?.map(({ id, name, phone }) => (
         <ListItem key={id}>
           <p>{name}</p>
-          <p>{number}</p>
+          <p>{phone}</p>
           <BtnDeleteContact onClick={() =>delContact(id)}>
             Delete
           </BtnDeleteContact>

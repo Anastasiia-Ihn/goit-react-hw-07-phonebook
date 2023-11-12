@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 
 import * as Yup from 'yup';
 import {
@@ -31,7 +31,7 @@ export const ContactForm = () => {
   const listContacts = useSelector(selectContacts);
 
   const onSubmit = (value, form) => {
-    const { name, number } = value;
+    const { name, phone } = value;
 
     const isElem = listContacts.find(contact => contact.name === name);
 
@@ -42,9 +42,9 @@ export const ContactForm = () => {
 
     dispatch(
       addContact({
-        id: nanoid(),
+        // id: nanoid(),
         name,
-        number,
+        phone,
       })
     );
 
@@ -60,14 +60,14 @@ export const ContactForm = () => {
       <StyledForm>
         <label>
           Name
-          <FieldForm id={nanoid()} name="name" />
+          <FieldForm name="name" />
           <ErrorMsg component="p" name="name" />
         </label>
 
         <label>
           Number
-          <FieldForm type="tel" id={nanoid()} name="number" />
-          <ErrorMsg component="p" name="number" />
+          <FieldForm type="tel" name="phone" />
+          <ErrorMsg component="p" name="phone" />
         </label>
 
         <BtnAddContact type="submit">Add contact</BtnAddContact>
